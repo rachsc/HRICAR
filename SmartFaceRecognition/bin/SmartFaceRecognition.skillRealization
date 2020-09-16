@@ -1,0 +1,11 @@
+SkillRealizationModel {
+	CoordinationModuleRealization faceRecognition coordModuleDef CommObjectRecognitionObjects.objRecognitionModule 
+	uses {
+		CommObjectRecognitionObjects.ObjectRecognitionCoordinationService intsName facerecog
+		DomainVision.VisionCoordinationService intsName camera
+		DomainPTU.PTUCoordinationService intsName cameractrl
+	} 
+	{
+		SkillRealization objectrecognition { action () }
+	}
+}
