@@ -1,0 +1,8 @@
+prefix=/root/SOFTWARE
+
+Name: ros_componentroscamera
+Description: Description of ros_componentroscamera
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

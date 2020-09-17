@@ -1,0 +1,11 @@
+ComponentDefinition ComponentROSCamera logo "/ComponentROSCamera/model/logo.png"
+{
+	Activity CameraActivity
+	{
+		MixedPortROSLink _cam
+		DefaultTrigger PeriodicTimer 10.0 Hz
+	}
+	OutputPort CameraServiceOut implements DomainVision.RGBImagePushService realizedBy CameraActivity {
+	}
+	MixedPortROS _cam
+}

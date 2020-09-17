@@ -1,0 +1,14 @@
+/root/SOFTWARE/bin/ComponentROSCamera
+/root/SOFTWARE/_setup_util.py
+/root/SOFTWARE/env.sh
+/root/SOFTWARE/setup.bash
+/root/SOFTWARE/local_setup.bash
+/root/SOFTWARE/setup.sh
+/root/SOFTWARE/local_setup.sh
+/root/SOFTWARE/setup.zsh
+/root/SOFTWARE/local_setup.zsh
+/root/SOFTWARE/.rosinstall
+/root/SOFTWARE/lib/pkgconfig/ros_componentroscamera.pc
+/root/SOFTWARE/share/ros_componentroscamera/cmake/ros_componentroscameraConfig.cmake
+/root/SOFTWARE/share/ros_componentroscamera/cmake/ros_componentroscameraConfig-version.cmake
+/root/SOFTWARE/share/ros_componentroscamera/package.xml
