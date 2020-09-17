@@ -8,15 +8,27 @@ Es el componente que me permite conectarme al tópico de la cámara "/usb_cam/im
 
 ## Pasos a seguir
 1. Añadir ambos componentes al entorno SmartSoft e incluirlos en el sistema de TIAGo.
+
 2. Copiar el archivo python [realtime_face_recognition.py](realtime_face_recognition.py y las fotos [obama.jpg](obama.jpg) y [biden.jpg](biden.jpg) en una carpeta.
+
 3. Instalar el módulo de python face_recognition: `pip install face_recognition`
+
 4. Asegurarse que [load_recognition.sh](SmartFaceRecognition/smartsoft/src/load_recognition.sh) tiene permisos de ejecución.
+
 5. instalar el paquete usb_cam de ROS:
+
     `cd /YOUR_PATH_TO_CATKIN_WORKSPACE/src`
+    
     `git clone https://github.com/ros-drivers/usb_cam.git`
+    
     `cd ..`
+    
     `catkin build`
+    
     `source devel/setup.bash`
+    
 6. Pueden testear este paquete así:
+
     `roslaunch usb_cam usb_cam-test.launch`
+    
 7. Hacer el deploy del sistema y al hacer click en start le llegará el streaming de video de la cámara y a cualquiera que no sea obama o biden lo reconocerá como "Unknown".
