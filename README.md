@@ -30,5 +30,7 @@ Es el componente que me permite conectarme al tópico de la cámara "/usb_cam/im
 6. Pueden testear este paquete así:
 
     `roslaunch usb_cam usb_cam-test.launch`
+
+7. En el launch file de usb_cam está configurado para que coja la señal de video de /dev/video0. Si la cámara no va a estar ahí, debéis cambiarlo.
     
 7. Hacer el deploy del sistema y al hacer click en start le llegará el streaming de video de la cámara y a cualquiera que no sea obama o biden lo reconocerá como "Unknown".
