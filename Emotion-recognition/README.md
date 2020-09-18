@@ -1,4 +1,4 @@
-# TESTEAR EL RECONOCIMIENTO DE CARAS EN TIAGo
+# TESTEAR EL RECONOCIMIENTO DE EMOCIONES EN TIAGo
 ## SmartEmotionRecognition
 Es el componente encargado del reconocimiento de expresiones faciales (emociones). Este componente utiliza OpenCV para la detección de caras y un modelo ya diseñado y entrenado con Keras porque el objetivo es utilizar redes neuronales convolucionales (CNN) para detectar las 7 emociones básicas: felicidad, tristeza, miedo, sorpresa, asco, enfado y neutral.
 En este componente hay un script llamado [load_emotionrecognition.sh](Emotion-recognition/SmartEmotionRecognition/smartsoft/src/load_emotionrecognition.sh) que lanza el código python [real_time_emotion_recognition.py](Emotion-recognition/emotion-recognition-src/real_time_emotion_recognition.py) de reconocimiento de emociones.
