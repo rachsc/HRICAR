@@ -22,10 +22,6 @@ obama_face_encoding = face_recognition.face_encodings(obama_image)[0]
 biden_image = face_recognition.load_image_file("/root/exchange/repos/face_recognition/examples/biden.jpg")
 biden_face_encoding = face_recognition.face_encodings(biden_image)[0]
 
-# Load a third sample picture and learn how to recognize it.
-raquel_image = face_recognition.load_image_file("/root/exchange/repos/face_recognition/examples/raquel.jpg")
-raquel_face_encoding = face_recognition.face_encodings(raquel_image)[0]
-
 # Create arrays of known face encodings and their names
 known_face_encodings = [
     obama_face_encoding,
