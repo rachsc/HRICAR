@@ -1,0 +1,12 @@
+/root/exchange/repos/SmartEmotionRecognition/smartsoft/build/CMakeFiles/install.dir
+/root/exchange/repos/SmartEmotionRecognition/smartsoft/build/CMakeFiles/uninstall.dir
+/root/exchange/repos/SmartEmotionRecognition/smartsoft/build/CMakeFiles/nodep.dir
+/root/exchange/repos/SmartEmotionRecognition/smartsoft/build/CMakeFiles/SmartEmotionRecognition.dir
+/root/exchange/repos/SmartEmotionRecognition/smartsoft/build/CMakeFiles/distclean-all.dir
+/root/exchange/repos/SmartEmotionRecognition/smartsoft/build/CMakeFiles/SmartEmotionRecognition_distclean.dir
+/root/exchange/repos/SmartEmotionRecognition/smartsoft/build/CMakeFiles/list_install_components.dir
+/root/exchange/repos/SmartEmotionRecognition/smartsoft/build/CMakeFiles/install/strip.dir
+/root/exchange/repos/SmartEmotionRecognition/smartsoft/build/CMakeFiles/install/local.dir
+/root/exchange/repos/SmartEmotionRecognition/smartsoft/build/CMakeFiles/autoinstall.dir
+/root/exchange/repos/SmartEmotionRecognition/smartsoft/build/CMakeFiles/edit_cache.dir
+/root/exchange/repos/SmartEmotionRecognition/smartsoft/build/CMakeFiles/rebuild_cache.dir

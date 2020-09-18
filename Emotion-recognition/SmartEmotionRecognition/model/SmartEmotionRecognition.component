@@ -1,0 +1,27 @@
+ComponentDefinition SmartEmotionRecognition logo "/SmartEmotionRecognition/model/logo.png"
+{
+	AnswerPort EmotionQueryServiceAnsw implements CommObjectRecognitionObjects.ObjectQueryService {}
+	RequestHandler EmotionQueryServiceAnswHandler triggeredFrom EmotionQueryServiceAnsw {}
+	AnswerPort EnvironmentQueryServiceAnsw implements CommObjectRecognitionObjects.EnvironmentQueryService {}
+	RequestHandler EnvironmentQueryServiceAnswHandler triggeredFrom EnvironmentQueryServiceAnsw {}
+	
+	InputPort CameraServiceIn implements DomainVision.RGBImagePushService {
+	}
+	
+	OutputPort EmotionEventServiceOut implements CommObjectRecognitionObjects.ObjectEventService realizedBy RecognitionTask {}
+	
+	/*RequestPort RGBDImageQueryServiceReq implements DomainVision.RGBDImageQueryService {}
+	RequestPort RGBImageQueryServiceReq implements DomainVision.RGBImageQueryService {}
+	RequestPort PointCloudQueryServiceReq implements DomainVision.PointCloudQueryService {}*/
+	
+	Activity RecognitionTask{}
+	Activity CaptureTask{}
+	
+	CoordinationSlavePort CoordinationPort implements 
+	CommObjectRecognitionObjects.ObjectRecognitionCoordinationService {
+		with objectquery realizedBy EmotionQueryServiceAnsw
+		with objectrecognitionevent realizedBy EmotionEventServiceOut
+		SkillRealizationsRef emotionRecognition
+	}
+	ComponentParameters SmartEmotionRecognitionParams slave CoordinationPort
+}

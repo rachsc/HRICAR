@@ -1,1 +1,0 @@
-/root/SOFTWARE/bin/SmartFaceRecognition
