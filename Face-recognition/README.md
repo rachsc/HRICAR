@@ -9,9 +9,7 @@ En este componente hay un script llamado [load_recognition.sh](Face-recognition/
 2. Antes de ejecutar pal_docker.sh, debemos crear la imagen docker para face_recognition en nuestro host:
 
 	Instalar docker-compose:
-	
-	`curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose`
-	
+	`curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose`	
 	`chmod +x /usr/local/bin/docker-compose`
 	
 	Queremos que el contenedor docker pueda acceder a la webcam y que pueda mostrar un display desde el deployment del sistema de TIAGo:
@@ -19,24 +17,29 @@ En este componente hay un script llamado [load_recognition.sh](Face-recognition/
 	`export XSOCK=/tmp/.X11-unix`
 	`export XAUTH=/tmp/.docker.xauth`
 	`xauth nlist $DISPLAY | sed -e 's/^..../ffff/' | xauth -f $XAUTH nmerge -`
+	
 	Creamos la imagen del docker para face_recognition:
 	`cd /host_path_to/face_recognition`
 	`docker-compose up`
 
 3. Añadir estas líneas al final de **pal_docker.sh**:
+	```
 	-v /host_path_to/face_recognition:/root/exchange/repos/face_recognition \
 	-v /var/run/docker.sock:/var/run/docker.sock \
 	-v /root/.Xauthority:/root/.Xauthority:rw \
 	--env="DISPLAY" \
 	--device=/dev/video0:/dev/video0 \
+	```
 
 4. Tener instalado docker en el entorno PAL de SmartSoft. Para ello añadí a **Dockerfile_SmartSoft_PAL_public_3_12** estas líneas:
+	```
 	RUN apt-get update
 	RUN apt-get install -y apt-transport-https ca-certificates curl gnupg-agent software-properties-common
 	RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 	RUN add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable"
 	RUN apt-get update
 	RUN apt-get -y install docker-ce
+	```
 
 5. Ejecutar pal_docker.sh
 
