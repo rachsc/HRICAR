@@ -59,7 +59,7 @@ En este componente hay un script llamado [load_recognition.sh](Face-recognition/
 
 6. Añadir el componentes SmartFaceRecognition al entorno SmartSoft e incluirlo en el sistema de TIAGo.
 
-7. Asegurarse que [load_recognition_gpu.sh](Face-recognition/SmartFaceRecognition/smartsoft/src/load_recognition_gpu.sh) tiene permisos de ejecución.
+7. Asegurarse que [load_recognition_gpu.sh](Face-recognition/SmartFaceRecognition/smartsoft/src) tiene permisos de ejecución.
 
 9. La carpeta creada en el host en el paso 1 aparecerá ahora en el docker SmartSoft de PAL en /root/exchange/repos/face_recognition.
 
