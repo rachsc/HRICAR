@@ -4,7 +4,7 @@ services:
   face_recognition:
     image: face_recognition
     container_name: face_recognition
-    working_dir: /face_recognition/examples
+    working_dir: /face_recognition
     build:
       context: .
       dockerfile: Dockerfile.gpu 
