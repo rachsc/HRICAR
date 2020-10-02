@@ -1,7 +1,7 @@
 # TESTEAR EL RECONOCIMIENTO DE CARAS EN TIAGo
 ## SmartFaceRecognition
 Es el componente encargado del reconocimiento de caras. Ahora mismo lo tengo entrenado simplemente para reconocer a Barack Obama, a Joe Biden y a mi. Así que podéis probar poniendo fotos de Obama y Biden a ver si los reconoce.
-En este componente hay un script llamado [load_recognition.sh](Face-recognition/SmartFaceRecognition/smartsoft/src/load_recognition.sh) que lanza el código python [realtime_face_recognition.py](Face-recognition/realtime_face_recognition.py) de reconocimiento de caras
+En este componente hay un script llamado [load_recognition_gpu.sh](Face-recognition/SmartFaceRecognition/smartsoft/src/load_recognition_gpu.sh) que lanza el código python [realtime_face_recognition.py](Face-recognition/realtime_face_recognition.py) de reconocimiento de caras
 
 ## Pasos a seguir para testear con Docker Nvidia GPU
 1. Copiar [docker-compose.yml](Face-recognition/docker-compose.yml), [Dockerfile.gpu](Face-recognition/Dockerfile.gpu), el archivo python [realtime_face_recognition.py](Face-recognition/realtime_face_recognition.py) y las fotos [obama.jpg](Face-recognition/obama.jpg) y [biden.jpg](Face-recognition/biden.jpg) en una carpeta llamada face_recognition en nuestro host.
