@@ -36,7 +36,7 @@ int CaptureTask::on_entry()
 {
 	// do initialization procedures here, which are called once, each time the task is started
 	// it is possible to return != 0 (e.g. when initialization fails) then the task is not executed further
-	system("/root/exchange/repos/SmartFaceRecognition/smartsoft/src/load_recognition.sh");
+	system("/root/exchange/repos/SmartFaceRecognition/smartsoft/src/load_recognition_gpu.sh");
 	return 0;
 }
 int CaptureTask::on_execute()

@@ -23,5 +23,5 @@ ComponentDefinition SmartFaceRecognition logo "/SmartFaceRecognition/model/logo.
 		with objectrecognitionevent realizedBy FaceEventServiceOut
 		SkillRealizationsRef faceRecognition
 	}
-	ComponentParameters  SmartFaceRecognitionParams slave CoordinationPort
+	ComponentParameters SmartFaceRecognitionParams slave CoordinationPort
 }
