@@ -1,0 +1,17 @@
+version: '2.3'
+
+services:
+  face_recognition:
+    image: face_recognition
+    container_name: face_recognition
+    working_dir: /face_recognition/examples
+    build:
+      context: .
+      dockerfile: Dockerfile.gpu 
+    volumes:
+      #Change this first path with the path of face_recognition in your host
+      - /home/blade/raquel/robmosys/face_recognition/:/face_recognition
+    devices:
+      #This is to give the container access to my webcam
+      - /dev/video0:/dev/video0
+    runtime: nvidia
