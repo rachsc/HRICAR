@@ -7,9 +7,13 @@ En este componente hay un script llamado [load_recognition.sh](Face-recognition/
 1. Copiar [docker-compose.yml](Face-recognition/docker-compose.yml), [Dockerfile.gpu](Face-recognition/Dockerfile.gpu), el archivo python [realtime_face_recognition.py](Face-recognition/realtime_face_recognition.py) y las fotos [obama.jpg](Face-recognition/obama.jpg) y [biden.jpg](Face-recognition/biden.jpg) en una carpeta llamada face_recognition en nuestro host.
 
 2. Antes de ejecutar pal_docker.sh, debemos crear la imagen docker para face_recognition en nuestro host:
+
 	Instalar docker-compose:
+	
 	`curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose`
+	
 	`chmod +x /usr/local/bin/docker-compose`
+	
 	Queremos que el contenedor docker pueda acceder a la webcam y que pueda mostrar un display desde el deployment del sistema de TIAGo:
 	`xhost +local:docker`
 	`export XSOCK=/tmp/.X11-unix`
@@ -27,7 +31,6 @@ En este componente hay un script llamado [load_recognition.sh](Face-recognition/
 	--device=/dev/video0:/dev/video0 \
 
 4. Tener instalado docker en el entorno PAL de SmartSoft. Para ello añadí a **Dockerfile_SmartSoft_PAL_public_3_12** estas líneas:
-	# Docker installation
 	RUN apt-get update
 	RUN apt-get install -y apt-transport-https ca-certificates curl gnupg-agent software-properties-common
 	RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
