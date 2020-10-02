@@ -18,13 +18,21 @@ En este componente hay un script llamado [load_recognition.sh](Face-recognition/
 	Queremos que el contenedor docker pueda acceder a la webcam y que pueda mostrar un display desde el deployment del sistema de TIAGo:
 	```
 	xhost +local:docker
+	```
+	```
 	export XSOCK=/tmp/.X11-unix
+	```
+	```
 	export XAUTH=/tmp/.docker.xauth
+	```
+	```
 	xauth nlist $DISPLAY | sed -e 's/^..../ffff/' | xauth -f $XAUTH nmerge -
 	```
 	Creamos la imagen del docker para face_recognition:
 	```
 	cd /host_path_to/face_recognition
+	```
+	```
 	docker-compose up
 	```
 
