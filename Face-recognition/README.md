@@ -6,21 +6,25 @@ En este componente hay un script llamado [load_recognition.sh](Face-recognition/
 ## Pasos a seguir para testear con Docker Nvidia GPU
 1. Copiar [docker-compose.yml](Face-recognition/docker-compose.yml), [Dockerfile.gpu](Face-recognition/Dockerfile.gpu), el archivo python [realtime_face_recognition.py](Face-recognition/realtime_face_recognition.py) y las fotos [obama.jpg](Face-recognition/obama.jpg) y [biden.jpg](Face-recognition/biden.jpg) en una carpeta llamada face_recognition en nuestro host.
 
-2. Antes de ejecutar pal_docker.sh, debemos crear la imagen docker para face_recognition en nuestro host:
+2. Antes de ejecutar pal_docker.sh, debemos crear la imagen docker para face_recognition en nuestro host. Para ello ejecutamos los siguientes comandos en el host:
 
 	Instalar docker-compose:
-	` curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose `	
-	`chmod +x /usr/local/bin/docker-compose`
-	
+	```
+	 curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose 
+	chmod +x /usr/local/bin/docker-compose
+	```
 	Queremos que el contenedor docker pueda acceder a la webcam y que pueda mostrar un display desde el deployment del sistema de TIAGo:
-	`xhost +local:docker`
-	`export XSOCK=/tmp/.X11-unix`
-	`export XAUTH=/tmp/.docker.xauth`
-	`xauth nlist $DISPLAY | sed -e 's/^..../ffff/' | xauth -f $XAUTH nmerge -`
-	
+	```
+	xhost +local:docker
+	export XSOCK=/tmp/.X11-unix
+	export XAUTH=/tmp/.docker.xauth
+	xauth nlist $DISPLAY | sed -e 's/^..../ffff/' | xauth -f $XAUTH nmerge -
+	```
 	Creamos la imagen del docker para face_recognition:
-	`cd /host_path_to/face_recognition`
-	`docker-compose up`
+	```
+	cd /host_path_to/face_recognition
+	docker-compose up
+	```
 
 3. Añadir estas líneas al final de **pal_docker.sh**:
 	```
