@@ -1,10 +1,10 @@
 # TESTEAR EL RECONOCIMIENTO DE CARAS EN TIAGo
 ## SmartFaceRecognition
 Es el componente encargado del reconocimiento de caras. Ahora mismo lo tengo entrenado simplemente para reconocer a Barack Obama, a Joe Biden y a mi. Así que podéis probar poniendo fotos de Obama y Biden a ver si los reconoce.
-En este componente hay un script llamado [load_recognition_gpu.sh](Face-recognition/SmartFaceRecognition/smartsoft/src/load_recognition_gpu.sh) que lanza el código python [realtime_face_recognition.py](Face-recognition/realtime_face_recognition.py) de reconocimiento de caras
+En este componente hay un script llamado [load_recognition_gpu.sh](SmartFaceRecognition/smartsoft/src/load_recognition_gpu.sh) que lanza el código python [realtime_face_recognition.py](realtime_face_recognition.py) de reconocimiento de caras
 
 ## Pasos a seguir para testear con Docker Nvidia GPU
-1. Copiar [docker-compose.yml](Face-recognition/docker-compose.yml), [Dockerfile.gpu](Face-recognition/Dockerfile.gpu), el archivo python [realtime_face_recognition.py](Face-recognition/realtime_face_recognition.py) y las fotos [obama.jpg](Face-recognition/obama.jpg) y [biden.jpg](Face-recognition/biden.jpg) en una carpeta llamada face_recognition en nuestro host.
+1. Copiar [docker-compose.yml](docker-compose.yml), [Dockerfile.gpu](Dockerfile.gpu), el archivo python [realtime_face_recognition.py](realtime_face_recognition.py) y las fotos [obama.jpg](obama.jpg) y [biden.jpg](biden.jpg) en una carpeta llamada face_recognition en nuestro host.
 
 2. Antes de ejecutar pal_docker.sh, debemos crear la imagen docker para face_recognition en nuestro host. Para ello ejecutamos los siguientes comandos en el host:
 
@@ -59,7 +59,7 @@ En este componente hay un script llamado [load_recognition_gpu.sh](Face-recognit
 
 6. Añadir el componentes SmartFaceRecognition al entorno SmartSoft e incluirlo en el sistema de TIAGo.
 
-7. Asegurarse que [load_recognition_gpu.sh](Face-recognition/SmartFaceRecognition/smartsoft/src) tiene permisos de ejecución.
+7. Asegurarse que [load_recognition_gpu.sh](SmartFaceRecognition/smartsoft/src/load_recognition_gpu.sh) tiene permisos de ejecución.
 
 9. La carpeta creada en el host en el paso 1 aparecerá ahora en el docker SmartSoft de PAL en /root/exchange/repos/face_recognition.
 
