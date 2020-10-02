@@ -1,0 +1,27 @@
+ComponentDefinition SmartBodyPoseRecognition logo "/SmartBodyPoseRecognition/model/logo.png"
+{
+	AnswerPort BodyPoseQueryServiceAnsw implements CommObjectRecognitionObjects.ObjectQueryService {}
+	RequestHandler BodyPoseQueryServiceAnswHandler triggeredFrom BodyPoseQueryServiceAnsw {}
+	AnswerPort EnvironmentQueryServiceAnsw implements CommObjectRecognitionObjects.EnvironmentQueryService {}
+	RequestHandler EnvironmentQueryServiceAnswHandler triggeredFrom EnvironmentQueryServiceAnsw {}
+	
+	InputPort CameraServiceIn implements DomainVision.RGBImagePushService {
+	}
+	
+	OutputPort BodyPoseEventServiceOut implements CommObjectRecognitionObjects.ObjectEventService realizedBy RecognitionTask {}
+	
+	RequestPort RGBDImageQueryServiceReq implements DomainVision.RGBDImageQueryService {}
+	RequestPort RGBImageQueryServiceReq implements DomainVision.RGBImageQueryService {}
+	RequestPort PointCloudQueryServiceReq implements DomainVision.PointCloudQueryService {}
+	
+	Activity RecognitionTask{}
+	Activity CaptureTask{}
+	
+	CoordinationSlavePort CoordinationPort implements 
+	CommObjectRecognitionObjects.ObjectRecognitionCoordinationService {
+		with objectquery realizedBy BodyPoseQueryServiceAnsw
+		with objectrecognitionevent realizedBy BodyPoseEventServiceOut
+		SkillRealizationsRef bodyposeRecognition
+	}
+	ComponentParameters SmartBodyPoseRecognitionParams slave CoordinationPort
+}

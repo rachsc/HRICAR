@@ -1,0 +1,11 @@
+SkillRealizationModel {
+	CoordinationModuleRealization bodyposeRecognition coordModuleDef CommObjectRecognitionObjects.objRecognitionModule 
+	uses {
+		CommObjectRecognitionObjects.ObjectRecognitionCoordinationService intsName bodyposerecog
+		DomainVision.VisionCoordinationService intsName camera
+		DomainPTU.PTUCoordinationService intsName cameractrl
+	} 
+	{
+		SkillRealization objectrecognition { action () }
+	}
+}
